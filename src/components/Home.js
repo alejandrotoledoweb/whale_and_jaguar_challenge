@@ -5,11 +5,11 @@ import '../styles/home.css';
 function Home() {
   return (
 
-    <main className="container container-sm container-md container-lg text-center">
+    <main className="container container-sm container-md container-lg text-center mt-5 ">
       <h2>Whale and Jaguar React Challenge</h2>
       <p>Instructions:</p>
       <p>
-        Go to the challenge page and see all the countries displayed on a list.
+        Go to each section and follow the instructions to fetch the data from each one.
       </p>
     </main>
 
