@@ -73,3 +73,12 @@ export const fetchItemsbyLanguage = (language) => async (dispatch) => {
     dispatch(setError(ActionTypes.SET_ERROR, error));
   }
 };
+
+export const fetchItemsbyCapital = (capital) => async (dispatch) => {
+  try {
+    const response = await apiUrl.get(`/capital/${capital}`);
+    dispatch({ type: ActionTypes.SET_BY_CAPITAL, payload: response.data });
+  } catch (error) {
+    dispatch(setError(ActionTypes.SET_ERROR, error));
+  }
+};
