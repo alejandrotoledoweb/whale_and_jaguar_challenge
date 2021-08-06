@@ -56,6 +56,24 @@ export const itemsReducer = (state = initialState, { type, payload }) => {
         status: 'set',
         filter: 'byCodeList',
       };
+    case ActionTypes.SET_BY_CURRENCY:
+      return {
+        ...state,
+        loading: false,
+        items: payload,
+        error: '',
+        status: 'set',
+        filter: 'byCurrency',
+      };
+    case ActionTypes.SET_BY_LANGUAGE:
+      return {
+        ...state,
+        loading: false,
+        items: payload,
+        error: '',
+        status: 'set',
+        filter: 'byLanguage',
+      };
     case ActionTypes.SET_ERROR:
       return {
         ...state,

@@ -31,6 +31,12 @@ const Navbar = () => (
       <Link to="/bycodelist" className="btn btn-link">
         Search by Code List
       </Link>
+      <Link to="/bycurrency" className="btn btn-link">
+        Search by Currency
+      </Link>
+      <Link to="/bylanguage" className="btn btn-link">
+        Search by Language
+      </Link>
     </div>
 
   </main>

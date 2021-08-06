@@ -7,6 +7,8 @@ import byNameItems from './components/byName';
 import byFullName from './components/byFullName';
 import byCode from './components/byCode';
 import byCodeList from './components/byListOfCodes';
+import byCurrency from './components/byCurrency';
+import byLanguage from './components/byLanguage';
 
 const Routes = () => (
   <BrowserRouter>
@@ -19,6 +21,8 @@ const Routes = () => (
         <Route path="/byfullname" component={byFullName} />
         <Route path="/bycode" component={byCode} />
         <Route path="/bycodelist" component={byCodeList} />
+        <Route path="/bycurrency" component={byCurrency} />
+        <Route path="/bylanguage" component={byLanguage} />
 
       </Switch>
     </main>

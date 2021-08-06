@@ -55,3 +55,21 @@ export const fetchItemsbyCodeList = (code, code2, code3) => async (dispatch) => 
     dispatch(setError(ActionTypes.SET_ERROR, error));
   }
 };
+
+export const fetchItemsbyCurrency = (currency) => async (dispatch) => {
+  try {
+    const response = await apiUrl.get(`/currency/${currency}`);
+    dispatch({ type: ActionTypes.SET_BY_CURRENCY, payload: response.data });
+  } catch (error) {
+    dispatch(setError(ActionTypes.SET_ERROR, error));
+  }
+};
+
+export const fetchItemsbyLanguage = (language) => async (dispatch) => {
+  try {
+    const response = await apiUrl.get(`/lang/${language}`);
+    dispatch({ type: ActionTypes.SET_BY_LANGUAGE, payload: response.data });
+  } catch (error) {
+    dispatch(setError(ActionTypes.SET_ERROR, error));
+  }
+};
