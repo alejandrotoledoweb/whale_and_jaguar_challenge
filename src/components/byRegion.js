@@ -8,20 +8,30 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import {
-  fetchItemsbyFullName,
+  fetchItemsbyRegion,
 } from '../redux/actions/itemsActions';
 
-const byFullName = ({ byFullName, fetchByName }) => {
+const byRegion = ({
+  byregion, fetchByRegion, error, loading,
+}) => {
   const initialValues = {
-    countryName: '',
+    region: '',
   };
 
   const appointmentSchema = Yup.object().shape({
-    countryName: Yup.string().required('Name is required'),
+    region: Yup.string().required('Capital is required'),
   });
 
   const submitForm = (values) => {
-    fetchByName(values.countryName);
+    fetchByRegion(values.region);
+  };
+
+  const message = () => {
+    if (!loading) {
+      <p className="text-success">Fetched successfully.</p>;
+    } else {
+      <span className="text-danger">{error}</span>;
+    }
   };
 
   return (
@@ -42,28 +52,28 @@ const byFullName = ({ byFullName, fetchByName }) => {
             } = formik;
             return (
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
-                <h5 className="my-4 text-center">Search by name of the country</h5>
+                <h5 className="my-4 text-center">Search by language of the country</h5>
                 <Form>
                   <div className="form-group w-50 mx-auto">
-                    <label htmlFor="countryName" className="mb-3">
-                      Name of the Country
+                    <label htmlFor="language" className="mb-3">
+                      Region of the country
                       <br />
-                      Search by country full name
+                      Search by region: Africa, Americas, Asia, Europe, Oceania.
                     </label>
                     <Field
                       type="string"
-                      name="countryName"
-                      id="countryName"
-                      placeholder="united states of america"
+                      name="region"
+                      id="region"
+                      placeholder="Africa"
                       className={`${
-                        errors.countryName && touched.countryName
+                        errors.region && touched.region
                           ? 'is-invalid'
                           : 'is-valid'
                       } form-control`}
                     />
 
                     <ErrorMessage
-                      name="country_name"
+                      name="region"
                       component="span"
                       className="text-danger"
                     />
@@ -78,10 +88,11 @@ const byFullName = ({ byFullName, fetchByName }) => {
                         } btn btn-success`}
                         disabled={!(dirty && isValid)}
                       >
-                        Fetch Countries
+                        Fetch Country
                       </button>
                     </div>
                   </div>
+                  {error ? message() : '' }
                 </Form>
                 <div className="mt-3" />
               </div>
@@ -89,32 +100,34 @@ const byFullName = ({ byFullName, fetchByName }) => {
           }}
         </Formik>
       </section>
-      <h2 className="mt-1 mb-5">Countries fetched by Full Name</h2>
-      {byFullName.map((item) => (
+      <h2 className="mt-1 mb-5">Countries fetched by Region</h2>
+      {byregion.map((item) => (
         <div key={item.numericCode} className="d-flex justify-content-between w-25">
           <h4 className="mt-3 mb-3">{item.name}</h4>
-          <img src={item.flag} alt={item.name} width="80" height="50" />
+          <img className="border" src={item.flag} alt={item.name} width="80" height="50" />
         </div>
       ))}
     </section>
   );
 };
 
-byFullName.defaultProps = {
-  fetchByName: PropTypes.func,
+byRegion.defaultProps = {
+  fetchByRegion: PropTypes.func,
 };
 
-byFullName.propTypes = {
-  fetchByName: PropTypes.func,
-  byFullName: PropTypes.arrayOf(Object).isRequired,
+byRegion.propTypes = {
+  fetchByRegion: PropTypes.func,
+  byregion: PropTypes.arrayOf(Object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  byFullName: state.allItems.items,
+  byregion: state.allItems.items,
+  error: state.allItems.error,
+  loading: state.allItems.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchByName: (countryName) => dispatch(fetchItemsbyFullName(countryName)),
+  fetchByRegion: (region) => dispatch(fetchItemsbyRegion(region)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byFullName);
+export default connect(mapStateToProps, mapDispatchToProps)(byRegion);

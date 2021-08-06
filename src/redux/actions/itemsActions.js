@@ -91,3 +91,12 @@ export const fetchItemsbyCalling = (callingcode) => async (dispatch) => {
     dispatch(setError(ActionTypes.SET_ERROR, error));
   }
 };
+
+export const fetchItemsbyRegion = (region) => async (dispatch) => {
+  try {
+    const response = await apiUrl.get(`/region/${region}`);
+    dispatch({ type: ActionTypes.SET_BY_REGION, payload: response.data });
+  } catch (error) {
+    dispatch(setError(ActionTypes.SET_ERROR, error));
+  }
+};
