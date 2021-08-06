@@ -11,7 +11,7 @@ import {
   fetchItemsbyName,
 } from '../redux/actions/itemsActions';
 
-const byNameItems = ({
+const ByNameItems = ({
   byName, fetchByName, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byNameItems = ({
   );
 };
 
-byNameItems.defaultProps = {
+ByNameItems.defaultProps = {
   fetchByName: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byNameItems.propTypes = {
+ByNameItems.propTypes = {
   fetchByName: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   byName: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByName: (countryName) => dispatch(fetchItemsbyName(countryName)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byNameItems);
+export default connect(mapStateToProps, mapDispatchToProps)(ByNameItems);

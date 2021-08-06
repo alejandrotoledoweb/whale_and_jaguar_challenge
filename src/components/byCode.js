@@ -11,7 +11,7 @@ import {
   fetchItemsbyCode,
 } from '../redux/actions/itemsActions';
 
-const byCode = ({ bycode, fetchByCode }) => {
+const ByCode = ({ bycode, fetchByCode }) => {
   const initialValues = {
     code: '',
   };
@@ -98,12 +98,13 @@ const byCode = ({ bycode, fetchByCode }) => {
   );
 };
 
-byCode.defaultProps = {
+ByCode.defaultProps = {
   fetchByCode: PropTypes.func,
 };
 
-byCode.propTypes = {
+ByCode.propTypes = {
   fetchByCode: PropTypes.func,
+  bycode: PropTypes.arrayOf(Object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -114,4 +115,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByCode: (code) => dispatch(fetchItemsbyCode(code)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCode);
+export default connect(mapStateToProps, mapDispatchToProps)(ByCode);

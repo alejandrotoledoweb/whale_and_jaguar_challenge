@@ -11,7 +11,7 @@ import {
   fetchItemsbyLanguage,
 } from '../redux/actions/itemsActions';
 
-const byLanguage = ({
+const ByLanguage = ({
   bylanguage, fetchByLanguage, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byLanguage = ({
   );
 };
 
-byLanguage.defaultProps = {
+ByLanguage.defaultProps = {
   fetchByLanguage: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byLanguage.propTypes = {
+ByLanguage.propTypes = {
   fetchByLanguage: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   bylanguage: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByLanguage: (language) => dispatch(fetchItemsbyLanguage(language)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byLanguage);
+export default connect(mapStateToProps, mapDispatchToProps)(ByLanguage);

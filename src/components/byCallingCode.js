@@ -11,7 +11,7 @@ import {
   fetchItemsbyCalling,
 } from '../redux/actions/itemsActions';
 
-const byCallingCode = ({
+const ByCallingCode = ({
   bycalling, fetchByCalling, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byCallingCode = ({
   );
 };
 
-byCallingCode.defaultProps = {
+ByCallingCode.defaultProps = {
   fetchByCalling: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byCallingCode.propTypes = {
+ByCallingCode.propTypes = {
   fetchByCalling: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   bycalling: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByCalling: (callingCode) => dispatch(fetchItemsbyCalling(callingCode)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCallingCode);
+export default connect(mapStateToProps, mapDispatchToProps)(ByCallingCode);

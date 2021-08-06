@@ -11,7 +11,7 @@ import {
   fetchItemsbyCodeList,
 } from '../redux/actions/itemsActions';
 
-const byCodeList = ({ bycodeList, fetchByCodeList }) => {
+const ByCodeList = ({ bycodeList, fetchByCodeList }) => {
   const initialValues = {
     code: '',
     code2: '',
@@ -140,12 +140,13 @@ const byCodeList = ({ bycodeList, fetchByCodeList }) => {
   );
 };
 
-byCodeList.defaultProps = {
+ByCodeList.defaultProps = {
   fetchByCodeList: PropTypes.func,
 };
 
-byCodeList.propTypes = {
+ByCodeList.propTypes = {
   fetchByCodeList: PropTypes.func,
+  bycodeList: PropTypes.arrayOf(Object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -156,4 +157,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByCodeList: (code, code2, code3) => dispatch(fetchItemsbyCodeList(code, code2, code3)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCodeList);
+export default connect(mapStateToProps, mapDispatchToProps)(ByCodeList);

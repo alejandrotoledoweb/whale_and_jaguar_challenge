@@ -11,7 +11,7 @@ import {
   fetchItemsbyRegionalBloc,
 } from '../redux/actions/itemsActions';
 
-const byRegionalBloc = ({
+const ByRegionalBloc = ({
   byregional, fetchByRegional, error, loading,
 }) => {
   const initialValues = {
@@ -111,13 +111,17 @@ const byRegionalBloc = ({
   );
 };
 
-byRegionalBloc.defaultProps = {
+ByRegionalBloc.defaultProps = {
   fetchByRegional: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byRegionalBloc.propTypes = {
+ByRegionalBloc.propTypes = {
   fetchByRegional: PropTypes.func,
-  byregion: PropTypes.arrayOf(Object).isRequired,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  byregional: PropTypes.arrayOf(Object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByRegional: (regionalbloc) => dispatch(fetchItemsbyRegionalBloc(regionalbloc)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byRegionalBloc);
+export default connect(mapStateToProps, mapDispatchToProps)(ByRegionalBloc);

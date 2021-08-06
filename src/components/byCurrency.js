@@ -11,7 +11,7 @@ import {
   fetchItemsbyCurrency,
 } from '../redux/actions/itemsActions';
 
-const byCurrency = ({
+const ByCurrency = ({
   bycurrency, fetchByCurrency, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byCurrency = ({
   );
 };
 
-byCurrency.defaultProps = {
+ByCurrency.defaultProps = {
   fetchByCurrency: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byCurrency.propTypes = {
+ByCurrency.propTypes = {
   fetchByCurrency: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   bycurrency: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByCurrency: (currency) => dispatch(fetchItemsbyCurrency(currency)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCurrency);
+export default connect(mapStateToProps, mapDispatchToProps)(ByCurrency);

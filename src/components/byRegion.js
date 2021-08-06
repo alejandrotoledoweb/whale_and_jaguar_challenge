@@ -11,7 +11,7 @@ import {
   fetchItemsbyRegion,
 } from '../redux/actions/itemsActions';
 
-const byRegion = ({
+const ByRegion = ({
   byregion, fetchByRegion, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byRegion = ({
   );
 };
 
-byRegion.defaultProps = {
+ByRegion.defaultProps = {
   fetchByRegion: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byRegion.propTypes = {
+ByRegion.propTypes = {
   fetchByRegion: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   byregion: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByRegion: (region) => dispatch(fetchItemsbyRegion(region)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byRegion);
+export default connect(mapStateToProps, mapDispatchToProps)(ByRegion);

@@ -11,7 +11,7 @@ import {
   fetchItemsbyCapital,
 } from '../redux/actions/itemsActions';
 
-const byCapital = ({
+const ByCapital = ({
   bycapital, fetchByCapital, error, loading,
 }) => {
   const initialValues = {
@@ -111,12 +111,16 @@ const byCapital = ({
   );
 };
 
-byCapital.defaultProps = {
+ByCapital.defaultProps = {
   fetchByCapital: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
-byCapital.propTypes = {
+ByCapital.propTypes = {
   fetchByCapital: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
   bycapital: PropTypes.arrayOf(Object).isRequired,
 };
 
@@ -130,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchByCapital: (capital) => dispatch(fetchItemsbyCapital(capital)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCapital);
+export default connect(mapStateToProps, mapDispatchToProps)(ByCapital);
