@@ -5,7 +5,7 @@ import {
   fetchAllItems,
 } from '../redux/actions/itemsActions';
 
-export const Items = ({ items, fetchItems }) => {
+const Items = ({ items, fetchItems }) => {
   useEffect(() => {
     fetchItems();
   }, [fetchItems]);

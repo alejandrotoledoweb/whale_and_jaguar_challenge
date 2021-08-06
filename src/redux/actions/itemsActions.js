@@ -7,14 +7,14 @@ export const setError = (actionType, error) => ({
 });
 
 export const setDevices = (items) => ({
-  type: ActionTypes.SET_ALL_ITEMS,
+  type: ActionTypes.SET_ITEMS,
   payload: items,
 });
 
 export const fetchAllItems = () => async (dispatch) => {
   try {
     const response = await apiUrl.get('/all');
-    dispatch({ type: ActionTypes.SET_ALL_ITEMS, payload: response.data });
+    dispatch({ type: ActionTypes.SET_ITEMS, payload: response.data });
   } catch (error) {
     dispatch(setError(ActionTypes.SET_ERROR, error));
   }

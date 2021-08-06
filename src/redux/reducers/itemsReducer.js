@@ -9,7 +9,7 @@ const initialState = {
 
 export const itemsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ActionTypes.SET_ALL_ITEMS:
+    case ActionTypes.SET_ITEMS:
       return {
         ...state,
         loading: false,
