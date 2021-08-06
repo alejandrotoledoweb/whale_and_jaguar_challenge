@@ -100,3 +100,12 @@ export const fetchItemsbyRegion = (region) => async (dispatch) => {
     dispatch(setError(ActionTypes.SET_ERROR, error));
   }
 };
+
+export const fetchItemsbyRegionalBloc = (regionalbloc) => async (dispatch) => {
+  try {
+    const response = await apiUrl.get(`/regionalbloc/${regionalbloc}`);
+    dispatch({ type: ActionTypes.SET_BY_REGIONAL_BLOC, payload: response.data });
+  } catch (error) {
+    dispatch(setError(ActionTypes.SET_ERROR, error));
+  }
+};

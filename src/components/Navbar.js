@@ -46,6 +46,9 @@ const Navbar = () => (
       <Link to="/byregion" className="btn btn-link btn-sm">
         Search by Region
       </Link>
+      <Link to="/byregionalbloc" className="btn btn-link btn-sm">
+        Search by Regional Bloc
+      </Link>
     </div>
 
   </main>

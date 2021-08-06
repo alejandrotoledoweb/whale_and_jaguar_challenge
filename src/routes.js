@@ -12,6 +12,7 @@ import byLanguage from './components/byLanguage';
 import byCapital from './components/byCapital';
 import byCallingCode from './components/byCallingCode';
 import byRegion from './components/byRegion';
+import byRegionalBloc from './components/byRegionalBloc';
 
 const Routes = () => (
   <BrowserRouter>
@@ -29,6 +30,7 @@ const Routes = () => (
         <Route path="/bycapital" component={byCapital} />
         <Route path="/bycallingcode" component={byCallingCode} />
         <Route path="/byregion" component={byRegion} />
+        <Route path="/byregionalbloc" component={byRegionalBloc} />
 
       </Switch>
     </main>

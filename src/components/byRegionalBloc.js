@@ -8,22 +8,22 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import {
-  fetchItemsbyCalling,
+  fetchItemsbyRegionalBloc,
 } from '../redux/actions/itemsActions';
 
-const byCallingCode = ({
-  bycalling, fetchByCalling, error, loading,
+const byRegionalBloc = ({
+  byregional, fetchByRegional, error, loading,
 }) => {
   const initialValues = {
-    calling: '',
+    regionalbloc: '',
   };
 
   const appointmentSchema = Yup.object().shape({
-    calling: Yup.string().required('Capital is required'),
+    regionalbloc: Yup.string().required('Capital is required'),
   });
 
   const submitForm = (values) => {
-    fetchByCalling(values.calling);
+    fetchByRegional(values.regionalbloc);
   };
 
   const message = () => {
@@ -52,28 +52,28 @@ const byCallingCode = ({
             } = formik;
             return (
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
-                <h5 className="my-4 text-center">Search by calling code of the country</h5>
+                <h5 className="my-4 text-center">Search by Regional Bloc of the country</h5>
                 <Form>
                   <div className="form-group w-50 mx-auto">
                     <label htmlFor="language" className="mb-3">
-                      Calling Code of the country
+                      RegionBloc of the country
                       <br />
-                      Search by calling code.
+                      Search by regional bloc.
                     </label>
                     <Field
                       type="string"
-                      name="calling"
-                      id="calling"
-                      placeholder="593"
+                      name="regionalbloc"
+                      id="regionalbloc"
+                      placeholder="EU"
                       className={`${
-                        errors.calling && touched.calling
+                        errors.regionalbloc && touched.regionalbloc
                           ? 'is-invalid'
                           : 'is-valid'
                       } form-control`}
                     />
 
                     <ErrorMessage
-                      name="capital"
+                      name="regionalbloc"
                       component="span"
                       className="text-danger"
                     />
@@ -100,8 +100,8 @@ const byCallingCode = ({
           }}
         </Formik>
       </section>
-      <h2 className="mt-1 mb-5">Countries fetched by Calling Code</h2>
-      {bycalling.map((item) => (
+      <h2 className="mt-1 mb-5">Countries fetched by Regional Bloc</h2>
+      {byregional.map((item) => (
         <div key={item.numericCode} className="d-flex justify-content-between w-25">
           <h4 className="mt-3 mb-3">{item.name}</h4>
           <img className="border" src={item.flag} alt={item.name} width="80" height="50" />
@@ -111,23 +111,23 @@ const byCallingCode = ({
   );
 };
 
-byCallingCode.defaultProps = {
-  fetchByCalling: PropTypes.func,
+byRegionalBloc.defaultProps = {
+  fetchByRegional: PropTypes.func,
 };
 
-byCallingCode.propTypes = {
-  fetchByCalling: PropTypes.func,
-  bycalling: PropTypes.arrayOf(Object).isRequired,
+byRegionalBloc.propTypes = {
+  fetchByRegional: PropTypes.func,
+  byregion: PropTypes.arrayOf(Object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  bycalling: state.allItems.items,
+  byregional: state.allItems.items,
   error: state.allItems.error,
   loading: state.allItems.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchByCalling: (callingCode) => dispatch(fetchItemsbyCalling(callingCode)),
+  fetchByRegional: (regionalbloc) => dispatch(fetchItemsbyRegionalBloc(regionalbloc)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(byCallingCode);
+export default connect(mapStateToProps, mapDispatchToProps)(byRegionalBloc);

@@ -52,7 +52,7 @@ const byCapital = ({
             } = formik;
             return (
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
-                <h5 className="my-4 text-center">Search by language of the country</h5>
+                <h5 className="my-4 text-center">Search by Capital of the country</h5>
                 <Form>
                   <div className="form-group w-50 mx-auto">
                     <label htmlFor="language" className="mb-3">

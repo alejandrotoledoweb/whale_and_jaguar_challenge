@@ -101,6 +101,15 @@ export const itemsReducer = (state = initialState, { type, payload }) => {
         status: 'set',
         filter: 'byRegion',
       };
+    case ActionTypes.SET_BY_REGIONAL_BLOC:
+      return {
+        ...state,
+        loading: false,
+        items: payload,
+        error: '',
+        status: 'set',
+        filter: 'byRegion',
+      };
     case ActionTypes.SET_ERROR:
       return {
         ...state,
