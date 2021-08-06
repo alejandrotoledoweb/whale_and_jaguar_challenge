@@ -13,7 +13,7 @@ export const itemsReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        devices: payload,
+        items: payload,
         error: '',
         status: 'set',
         filter: 'All',
