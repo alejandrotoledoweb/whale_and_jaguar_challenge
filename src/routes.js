@@ -3,6 +3,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Items from './components/Items';
 import Navbar from './components/Navbar';
+import byNameItems from './components/byName';
+import byFullName from './components/byFullName';
+import byCode from './components/byCode';
+import byCodeList from './components/byListOfCodes';
 
 const Routes = () => (
   <BrowserRouter>
@@ -11,6 +15,10 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/items" component={Items} />
+        <Route path="/byname" component={byNameItems} />
+        <Route path="/byfullname" component={byFullName} />
+        <Route path="/bycode" component={byCode} />
+        <Route path="/bycodelist" component={byCodeList} />
 
       </Switch>
     </main>
