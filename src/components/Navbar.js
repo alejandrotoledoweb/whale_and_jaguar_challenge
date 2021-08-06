@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 
 const Navbar = () => (
-  <main className="w-100 container d-flex border-top border-bottom pt-3 pb-3 rounded mt-3 flex-column">
+  <header className="w-100 container d-flex border-top border-bottom pt-3 pb-3 rounded mt-3 flex-column">
     <div className="d-flex justify-content-around">
       <h4>
         <i className="fas fa-laptop-code" />
@@ -51,7 +51,7 @@ const Navbar = () => (
       </Link>
     </div>
 
-  </main>
+  </header>
 );
 
 export default Navbar;

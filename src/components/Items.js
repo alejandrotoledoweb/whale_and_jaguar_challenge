@@ -12,7 +12,7 @@ const Items = ({ items, fetchItems }) => {
 
   return (
     <section className="container-fluid mt-4">
-      <h2 className="mt-1 mb-5">All listed Items from API</h2>
+      <h2 className="mt-1 mb-5">All listed countries from API</h2>
       {items.map((item) => (
         <div key={item.numericCode} className="d-flex justify-content-between w-25">
           <h4 className="mt-3 mb-3">{item.name}</h4>

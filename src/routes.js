@@ -10,7 +10,7 @@ import byCodeList from './components/byListOfCodes';
 import byCurrency from './components/byCurrency';
 import byLanguage from './components/byLanguage';
 import byCapital from './components/byCapital';
-import byCallingCode from './components/byCallingCode';
+import byCallingCode from './components/ByCallingCode';
 import byRegion from './components/byRegion';
 import byRegionalBloc from './components/byRegionalBloc';
 
