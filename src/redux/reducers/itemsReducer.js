@@ -83,6 +83,15 @@ export const itemsReducer = (state = initialState, { type, payload }) => {
         status: 'set',
         filter: 'byCapital',
       };
+    case ActionTypes.SET_BY_CALLING_CODE:
+      return {
+        ...state,
+        loading: false,
+        items: payload,
+        error: '',
+        status: 'set',
+        filter: 'byCallingCode',
+      };
     case ActionTypes.SET_ERROR:
       return {
         ...state,

@@ -17,7 +17,7 @@ const Navbar = () => (
     </div>
     <div className="d-flex justify-content-around flex-wrap border-top mt-3 pt-2">
       <Link to="/items" className="btn btn-link btn-sm">
-        All Items
+        All Countries
       </Link>
       <Link to="/byname" className="btn btn-link btn-sm">
         Search by Name
@@ -39,6 +39,9 @@ const Navbar = () => (
       </Link>
       <Link to="/bycapital" className="btn btn-link btn-sm">
         Search by Capital
+      </Link>
+      <Link to="/bycallingcode" className="btn btn-link btn-sm">
+        Search by Calling Code
       </Link>
     </div>
 

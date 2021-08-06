@@ -10,6 +10,7 @@ import byCodeList from './components/byListOfCodes';
 import byCurrency from './components/byCurrency';
 import byLanguage from './components/byLanguage';
 import byCapital from './components/byCapital';
+import byCallingCode from './components/byCallingCode';
 
 const Routes = () => (
   <BrowserRouter>
@@ -25,6 +26,7 @@ const Routes = () => (
         <Route path="/bycurrency" component={byCurrency} />
         <Route path="/bylanguage" component={byLanguage} />
         <Route path="/bycapital" component={byCapital} />
+        <Route path="/bycallingcode" component={byCallingCode} />
 
       </Switch>
     </main>
