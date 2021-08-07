@@ -11,6 +11,8 @@ import {
   fetchItemsbyCode,
 } from '../redux/actions/itemsActions';
 
+import '../styles/bycode.css';
+
 const ByCode = ({ bycode, fetchByCode }) => {
   const initialValues = {
     code: '',
@@ -42,7 +44,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
             } = formik;
             return (
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
-                <h5 className="my-4 text-center">Search by name of the country</h5>
+                <h5 className="my-4 text-center">Search by code of the country</h5>
                 <Form>
                   <div className="form-group w-50 mx-auto">
                     <label htmlFor="code" className="mb-3">
@@ -92,7 +94,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
       <h2 className="mt-1 mb-5">Countries fetched by Code</h2>
       <div key={bycode.numericCode} className="d-flex justify-content-between w-25">
         <h4 className="mt-3 mb-3">{bycode.name}</h4>
-        <img src={bycode.flag} alt={bycode.name} width="80" height="50" />
+        <img src={bycode.flag} alt={bycode.name} width="80" height="50" className="image" />
       </div>
     </section>
   );
