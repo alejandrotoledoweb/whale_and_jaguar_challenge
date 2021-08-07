@@ -7,6 +7,7 @@ The API allows different ways to navigate and search the information and it is d
 
 ![screenshot](./src/assets/home_screenshot.png)
 ![screenshot](./src/assets/all_countries_screenshot.png)
+![screenshot](./src/assets/search_by_name.png)
 
 ## Features of the Search on the API
 
@@ -14,7 +15,13 @@ The API allows the user to search the information through the following informat
 - Name or partial name of the country
 - Full name of the country
 - Code of the country
-- By three code of the country
+- By three codes of the country
+- Currency
+- Languages
+- Capital
+- Calling Code
+- Region
+- Regional Bloc
 
 ## Built With
 
