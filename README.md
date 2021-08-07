@@ -48,7 +48,7 @@ To get a local copy up and follow these simple example steps.
 
 - Please make a local copy of this repo by typing this command on your terminal.
 
-`git clone https://github.com/alejandrotoledoweb/jaguar_and_whale_challenge.git`
+`git clone https://github.com/alejandrotoledoweb/whale_and_jaguar_challenge.git`
 
 - Then, go to the folder created with:
 
