@@ -9,6 +9,10 @@ The API allows different ways to navigate and search the information and it is d
 ![screenshot](./src/assets/all_countries_screenshot.png)
 ![screenshot](./src/assets/search_by_name.png)
 
+## Live demo link
+
+Please check the [live demo link](https://whaleandjaguarreactjs.netlify.app/)
+
 ## Features of the Search on the API
 
 The API allows the user to search the information through the following information:
