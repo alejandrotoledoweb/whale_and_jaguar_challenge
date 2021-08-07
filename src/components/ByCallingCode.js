@@ -10,6 +10,7 @@ import * as Yup from 'yup';
 import {
   fetchItemsbyCalling,
 } from '../redux/actions/itemsActions';
+import Footer from './Footer';
 
 const ByCallingCode = ({
   bycalling, fetchByCalling, error, loading,
@@ -51,10 +52,10 @@ const ByCallingCode = ({
               errors, touched, isValid, dirty,
             } = formik;
             return (
-              <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
+              <div className="mt-2 pl-2 pt-2 mb-2 pb-4 col-lg-6 col-md-6 col-sm-12 mx-auto">
                 <h5 className="my-4 text-center">Search by calling code of the country</h5>
                 <Form>
-                  <div className="form-group w-50 mx-auto">
+                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto">
                     <label htmlFor="language" className="mb-3">
                       Calling Code of the country
                       <br />
@@ -107,6 +108,7 @@ const ByCallingCode = ({
           <img className="border" src={item.flag} alt={item.name} width="80" height="50" />
         </div>
       ))}
+      <Footer />
     </section>
   );
 };

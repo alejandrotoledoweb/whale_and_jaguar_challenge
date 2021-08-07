@@ -10,6 +10,7 @@ import * as Yup from 'yup';
 import {
   fetchItemsbyCode,
 } from '../redux/actions/itemsActions';
+import Footer from './Footer';
 
 import '../styles/bycode.css';
 
@@ -43,10 +44,10 @@ const ByCode = ({ bycode, fetchByCode }) => {
               errors, touched, isValid, dirty,
             } = formik;
             return (
-              <div className="mt-2 pl-2 pt-2 mb-2 pb-4 w-75 mx-auto">
+              <div className="mt-2 pl-2 pt-2 mb-2 pb-4 pb-4 col-lg-6 col-md-6 col-sm-12 mx-auto">
                 <h5 className="my-4 text-center">Search by code of the country</h5>
                 <Form>
-                  <div className="form-group w-50 mx-auto">
+                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto">
                     <label htmlFor="code" className="mb-3">
                       Code of the Country
                       <br />
@@ -96,6 +97,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
         <h4 className="mt-3 mb-3">{bycode.name}</h4>
         <img src={bycode.flag} alt={bycode.name} width="80" height="50" className="image" />
       </div>
+      <Footer />
     </section>
   );
 };
