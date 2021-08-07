@@ -1,0 +1,19 @@
+.title {
+  color: #ff8600;
+}
+
+.home-btn {
+  color: #ff8600;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.links {
+  color: #758bfd;
+  text-decoration: none;
+}
+
+header {
+  background-color: #f1f2f6;
+}
