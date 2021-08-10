@@ -1,0 +1,21 @@
+.main-class {
+  list-style-type: none;
+}
+
+.main-class a {
+  padding: 0.4rem 0.7rem;
+}
+
+.disabledBtn {
+  list-style-type: none;
+}
+
+.button {
+  margin: 0.4rem 0.4rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.activeBtn {
+  border: 1px solid black;
+  border-radius: 15%;
+}
