@@ -93,7 +93,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
         </Formik>
       </section>
       <h2 className="mt-1 mb-5">Countries fetched by Code</h2>
-      <div key={bycode.numericCode} className="d-flex justify-content-between w-25">
+      <div key={bycode.numericCode} className="d-flex justify-content-between col-lg-3 col-md-6 col-sm-12">
         <h4 className="mt-3 mb-3">{bycode.name}</h4>
         <img src={bycode.flag} alt={bycode.name} width="80" height="50" className="image" />
       </div>

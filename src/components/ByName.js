@@ -102,7 +102,7 @@ const ByNameItems = ({
       {byName.map((item) => (
         <div
           key={item.numericCode}
-          className="d-flex justify-content-between w-25"
+          className="d-flex justify-content-between col-lg-3 col-md-6 col-sm-12"
         >
           <h4 className="mt-3 mb-3">{item.name}</h4>
           <img src={item.flag} alt={item.name} width="80" height="50" />
