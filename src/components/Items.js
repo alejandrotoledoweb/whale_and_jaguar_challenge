@@ -20,7 +20,7 @@ const Items = ({ items, fetchItems }) => {
     .map((item) => (
       <article
         key={item.numericCode}
-        className="d-flex flex-wrap mx-auto justify-content-between mt-2 mb-3 pt-3 pr-5 pl-3 pb-3 col-lg-9 col-md-6 col-sm-12 border rounded shadow p-3"
+        className="item d-flex flex-wrap mx-auto justify-content-between mt-2 mb-3 pt-3 pr-5 pl-3 pb-3 col-lg-9 col-md-6 col-sm-12 rounded shadow p-3"
       >
         <div className="d-flex flex-wrap flex-column mx-auto align-items-center justify-content-start col-lg-3 col-md-6 col-sm-12">
           <h4 className="mt-3 mb-3">{item.name}</h4>
