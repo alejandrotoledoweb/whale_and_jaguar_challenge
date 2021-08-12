@@ -5,7 +5,7 @@ import '../styles/home.css';
 function Home() {
   return (
     <>
-      <main className=" main-home container container-sm container-md container-lg text-center mt-5 pt-4 pb-3 pl-3 pr-3 border">
+      <main className=" main-home container container-sm container-md container-lg text-center mt-5 pt-4 pb-3 pl-3 pr-3 shadow p-3 rounded">
         <h2>Whale and Jaguar React Challenge</h2>
         <p>Challenge</p>
         <p>
