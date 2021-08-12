@@ -47,7 +47,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 pb-4 col-lg-6 col-md-6 col-sm-12 mx-auto">
                 <h5 className="my-4 text-center">Search by code of the country</h5>
                 <Form>
-                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto">
+                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto shadow p-3 rounded">
                     <label htmlFor="code" className="mb-3">
                       Code of the Country
                       <br />
@@ -76,7 +76,7 @@ const ByCode = ({ bycode, fetchByCode }) => {
                     <div className="">
                       <button
                         type="submit"
-                        className={`${
+                        className={`shadow p-2 rounded ${
                           !(dirty && isValid) ? 'disabled-btn' : ''
                         } btn btn-success`}
                         disabled={!(dirty && isValid)}

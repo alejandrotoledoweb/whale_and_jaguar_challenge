@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import '../styles/navbar.css';
 
 const Navbar1 = () => (
-  <header className="w-100 container d-flex border-top border-bottom pt-3 pb-3 rounded mt-3 flex-column">
+  <header className="w-100 container d-flex border-top border-bottom pt-3 pb-3 rounded mt-3 flex-column shadow p-3 rounded">
     <div className="d-flex justify-content-around mb-3 flex-wrap">
       <h4 className="title">
         <i className="fas fa-laptop-code" />
@@ -28,6 +28,11 @@ const Navbar1 = () => (
               <li className="nav-item">
                 <Link to="/items" className="links btn btn-link btn-sm">
                   All Countries
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/byname" className="links btn btn-link btn-sm">
+                  Search by Name
                 </Link>
               </li>
               <li className="nav-item">

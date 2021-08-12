@@ -45,7 +45,7 @@ const ByFullName = ({ byFullName, fetchByName }) => {
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 pb-4 col-lg-6 col-md-6 col-sm-12 mx-auto">
                 <h5 className="my-4 text-center">Search by name of the country</h5>
                 <Form>
-                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto">
+                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto  shadow p-3 rounded">
                     <label htmlFor="countryName" className="mb-3">
                       Name of the Country
                       <br />
@@ -74,7 +74,7 @@ const ByFullName = ({ byFullName, fetchByName }) => {
                     <div className="">
                       <button
                         type="submit"
-                        className={`${
+                        className={`shadow p-2 rounded ${
                           !(dirty && isValid) ? 'disabled-btn' : ''
                         } btn btn-success`}
                         disabled={!(dirty && isValid)}

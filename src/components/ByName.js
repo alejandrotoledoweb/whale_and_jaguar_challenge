@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  Formik,
-  Form,
-  Field, ErrorMessage,
+  Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
-import {
-  fetchItemsbyName,
-} from '../redux/actions/itemsActions';
+import { fetchItemsbyName } from '../redux/actions/itemsActions';
 import Footer from './Footer';
 
 const ByNameItems = ({
@@ -37,10 +33,9 @@ const ByNameItems = ({
 
   return (
     <section className="container-fluid mt-4">
-
       <section>
         <Formik
-          className="w-100"
+          className="w-100 shadow-sm p-3 border"
           initialValues={initialValues}
           validationSchema={appointmentSchema}
           onSubmit={(values) => {
@@ -53,9 +48,11 @@ const ByNameItems = ({
             } = formik;
             return (
               <div className="mt-2 pl-2 pt-2 mb-2 pb-4 pb-4 col-lg-6 col-md-6 col-sm-12 mx-auto">
-                <h5 className="my-4 text-center">Search by name of the country</h5>
+                <h5 className="my-4 text-center">
+                  Search by name of the country
+                </h5>
                 <Form>
-                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto">
+                  <div className="form-group col-lg-6 col-md-6 col-sm-12 mx-auto shadow p-3 rounded">
                     <label htmlFor="countryName" className="mb-3">
                       Name of the Country
                       <br />
@@ -84,7 +81,7 @@ const ByNameItems = ({
                     <div className="">
                       <button
                         type="submit"
-                        className={`${
+                        className={`shadow p-2 rounded ${
                           !(dirty && isValid) ? 'disabled-btn' : ''
                         } btn btn-success`}
                         disabled={!(dirty && isValid)}
@@ -93,7 +90,7 @@ const ByNameItems = ({
                       </button>
                     </div>
                   </div>
-                  {error ? message() : '' }
+                  {error ? message() : ''}
                 </Form>
                 <div className="mt-3" />
               </div>
@@ -103,7 +100,10 @@ const ByNameItems = ({
       </section>
       <h2 className="mt-1 mb-5">Countries fetched by Name</h2>
       {byName.map((item) => (
-        <div key={item.numericCode} className="d-flex justify-content-between w-25">
+        <div
+          key={item.numericCode}
+          className="d-flex justify-content-between w-25"
+        >
           <h4 className="mt-3 mb-3">{item.name}</h4>
           <img src={item.flag} alt={item.name} width="80" height="50" />
         </div>
