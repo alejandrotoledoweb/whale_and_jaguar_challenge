@@ -1,16 +1,19 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
 import ByNameItems from './ByName';
 import { myStore } from '../redux/store/index';
 
-test('renders learn byName title of form', () => {
-  render(
+afterEach(cleanup);
+
+it('test the title render from search byBame', () => {
+  const { queryAllByText } = render(
     <Provider store={myStore}>
       <ByNameItems />
     </Provider>,
   );
-  const titleElement = screen.getByText(/Search by name of the country/i);
-  expect(titleElement).toBeInTheDocument();
+  const input = queryAllByText('Search by name of the country');
+  expect(input).toBeTruthy();
 });
 
 it('test the input render from form to search byBame', () => {
@@ -20,5 +23,29 @@ it('test the input render from form to search byBame', () => {
     </Provider>,
   );
   const input = queryByPlaceholderText('united');
-  expect(input).toBeInTheDocument();
+  expect(input).toBeTruthy();
+});
+
+it('test the button render from form to search byBame', () => {
+  const { queryAllByTestId } = render(
+    <Provider store={myStore}>
+      <ByNameItems />
+    </Provider>,
+  );
+  const button = queryAllByTestId('fetch-btn');
+  expect(button).toBeTruthy();
+});
+
+test('when the user change the value of the input', () => {
+  const { queryByPlaceholderText } = render(
+    <Provider store={myStore}>
+      <ByNameItems />
+    </Provider>,
+  );
+  const input = queryByPlaceholderText('united');
+  act(() => {
+    fireEvent.change(input, { target: { value: 'ecuador' } });
+  });
+
+  expect(input.value).toBe('ecuador');
 });

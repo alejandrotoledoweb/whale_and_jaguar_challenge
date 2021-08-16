@@ -59,6 +59,7 @@ const ByNameItems = ({
                       It can be the native name or partial name
                     </label>
                     <Field
+                      title="input-by-name"
                       type="string"
                       name="countryName"
                       id="countryName"
@@ -80,6 +81,7 @@ const ByNameItems = ({
                   <div className="mt-5 mt-3 d-flex justify-content-around">
                     <div className="">
                       <button
+                        data-testid="fetch-btn"
                         type="submit"
                         className={`shadow p-2 rounded ${
                           !(dirty && isValid) ? 'disabled-btn' : ''
