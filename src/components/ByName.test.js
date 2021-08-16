@@ -1,4 +1,6 @@
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import {
+  render, fireEvent, cleanup, waitFor
+} from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
 import ByNameItems from './ByName';
@@ -36,7 +38,7 @@ it('test the button render from form to search byBame', () => {
   expect(button).toBeTruthy();
 });
 
-test('when the user change the value of the input', () => {
+test('when the user change the value of the input', async () => {
   const { queryByPlaceholderText } = render(
     <Provider store={myStore}>
       <ByNameItems />
@@ -46,6 +48,7 @@ test('when the user change the value of the input', () => {
   act(() => {
     fireEvent.change(input, { target: { value: 'ecuador' } });
   });
-
-  expect(input.value).toBe('ecuador');
+  await waitFor(() => {
+    expect(input.value).toBe('ecuador');
+  });
 });
