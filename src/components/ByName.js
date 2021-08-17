@@ -59,6 +59,7 @@ const ByNameItems = ({
                       It can be the native name or partial name
                     </label>
                     <Field
+                      data-testid="input-by-name"
                       title="input-by-name"
                       type="string"
                       name="countryName"
@@ -103,6 +104,7 @@ const ByNameItems = ({
       <h2 className="mt-1 mb-5">Countries fetched by Name</h2>
       {byName.map((item) => (
         <div
+          data-testid="list-by-name"
           key={item.numericCode}
           className="d-flex justify-content-between col-lg-3 col-md-6 col-sm-12"
         >
