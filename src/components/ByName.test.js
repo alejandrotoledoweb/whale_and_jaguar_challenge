@@ -1,5 +1,5 @@
 import {
-  render, fireEvent, cleanup, waitFor
+  render, fireEvent, cleanup, waitFor,
 } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
